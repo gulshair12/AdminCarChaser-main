@@ -12,6 +12,7 @@ export const index = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   return (
     <div>
       <Container fluid>
@@ -86,7 +87,12 @@ export const index = () => {
             </Row>
           </Col>
           <div>
-            <Modal show={show} onHide={handleClose}>
+            <Modal
+              show={show}
+              aria-labelledby="contained-modal-title-vcenter"
+              onClick={handleClose}
+              centered
+            >
               <BidsModal />
             </Modal>
           </div>
