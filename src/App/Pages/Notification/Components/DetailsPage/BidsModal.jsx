@@ -1,8 +1,7 @@
 import { React, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
-import Modal from "react-bootstrap/Modal";
-
+import "./BidsModal.css";
 const BidsModal = ({ handleClose }) => {
   const [bidSelected, setBidSelected] = useState(null);
 
@@ -73,6 +72,50 @@ const BidsModal = ({ handleClose }) => {
       name: "Mohsin zulfqar",
 
       amount: "$8000",
+      bidStatus: {
+        textAccept: " Accept ",
+        textDeny: "Deny",
+        backgroundColorAccept: "#4E9C0B",
+        backgroundColorDeny: "#FF3737",
+      },
+    },
+    {
+      name: "Mohsin zulfqar",
+
+      amount: "$7000",
+      bidStatus: {
+        textAccept: " Accept ",
+        textDeny: "Deny",
+        backgroundColorAccept: "#4E9C0B",
+        backgroundColorDeny: "#FF3737",
+      },
+    },
+    {
+      name: "Mohsin zulfqar",
+
+      amount: "$7000",
+      bidStatus: {
+        textAccept: " Accept ",
+        textDeny: "Deny",
+        backgroundColorAccept: "#4E9C0B",
+        backgroundColorDeny: "#FF3737",
+      },
+    },
+    {
+      name: "Mohsin zulfqar",
+
+      amount: "$7000",
+      bidStatus: {
+        textAccept: " Accept ",
+        textDeny: "Deny",
+        backgroundColorAccept: "#4E9C0B",
+        backgroundColorDeny: "#FF3737",
+      },
+    },
+    {
+      name: "Mohsin zulfqar",
+
+      amount: "$7000",
       bidStatus: {
         textAccept: " Accept ",
         textDeny: "Deny",
@@ -184,84 +227,92 @@ const BidsModal = ({ handleClose }) => {
                 >
                   Bids
                 </div>
-                <Table
-                  responsive
-                  style={{
-                    border: "1px solid white",
-                    borderRadius: "20px",
-                  }}
-                >
-                  <thead style={headertable}>
-                    <tr
-                      className="tbody,td,tfoot,th,thead,tr"
-                      style={headertable}
-                    >
-                      <th style={headerCellStyle}>Dealers Name</th>
-                      <th style={headerCellStyle}>Bids Amount</th>
-                      <th style={headerCellStyle}>Pending Bids Response</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.map((item, index) => (
-                      <tr key={index} className="border-bottom">
-                        <td>
-                          <p
-                            className=" my-0 py-1 text-nowrap "
-                            style={tablerow}
-                          >
-                            {item.name}
-                          </p>
-                        </td>
-
-                        <td>
-                          {" "}
-                          <p
-                            className=" my-0 py-1 text-nowrap "
-                            style={tablerow}
-                          >
-                            {item.amount}
-                          </p>
-                        </td>
-
-                        <td>
-                          <p className=" my-0 py-1 text-nowrap  ">
-                            <button
-                              className="border-0 px-2 py-1"
-                              style={{
-                                backgroundColor:
-                                  item.bidStatus.backgroundColorAccept,
-                                borderRadius: "6px",
-                                color: "white",
-                                width: "50%",
-                              }}
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                handleAccept(item.amount);
-                              }}
-                            >
-                              <img src="./accept.svg" />
-                              {item.bidStatus.textAccept}
-                            </button>
-                            <button
-                              className="border-0 px-2 py-1 "
-                              style={{
-                                backgroundColor:
-                                  item.bidStatus.backgroundColorDeny,
-                                borderRadius: "6px",
-                                color: "white",
-                                width: "50%",
-                                marginLeft: "5px",
-                              }}
-                            >
-                              <img src="./deny.svg" />
-                              {item.bidStatus.textDeny}
-                            </button>
-                          </p>
-                        </td>
+                <div className="scrollBar">
+                  <Table
+                    responsive
+                    style={{
+                      border: "1px solid white",
+                      borderRadius: "20px",
+                    }}
+                  >
+                    <thead style={headertable}>
+                      <tr
+                        className="tbody,td,tfoot,th,thead,tr"
+                        style={headertable}
+                      >
+                        <th style={headerCellStyle}>Dealers Name</th>
+                        <th style={headerCellStyle}>Bids Amount</th>
+                        <th style={headerCellStyle}>Pending Bids Response</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </Table>
+                    </thead>
+                    <tbody>
+                      {data.map((item, index) => (
+                        <tr key={index} className="border-bottom">
+                          <td>
+                            <p
+                              className=" my-0 py-1 text-nowrap "
+                              style={tablerow}
+                            >
+                              {item.name}
+                            </p>
+                          </td>
+
+                          <td>
+                            {" "}
+                            <p
+                              className=" my-0 py-1 text-nowrap "
+                              style={tablerow}
+                            >
+                              {item.amount}
+                            </p>
+                          </td>
+
+                          <td>
+                            <p className=" my-0 py-1 text-nowrap  ">
+                              <button
+                                className="border-0 p-1"
+                                style={{
+                                  backgroundColor:
+                                    item.bidStatus.backgroundColorAccept,
+                                  borderRadius: "6px",
+                                  color: "white",
+                                  width: "50%",
+                                }}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleAccept(item.amount);
+                                }}
+                              >
+                                <img
+                                  src="./accept.svg"
+                                  style={{ marginRight: "5px" }}
+                                />
+                                {item.bidStatus.textAccept}
+                              </button>
+                              <button
+                                className="border-0 p-1 "
+                                style={{
+                                  backgroundColor:
+                                    item.bidStatus.backgroundColorDeny,
+                                  borderRadius: "6px",
+                                  color: "white",
+                                  width: "50%",
+                                  marginLeft: "5px",
+                                }}
+                              >
+                                <img
+                                  src="./deny.svg"
+                                  style={{ marginRight: "18px" }}
+                                />
+                                {item.bidStatus.textDeny}
+                              </button>
+                            </p>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Table>
+                </div>
               </Container>
             </Col>
           </Row>
