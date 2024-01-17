@@ -43,6 +43,16 @@ const SideBar = props =>
             <p className='mb-0'>Dashboard</p>
           </div>
         </Link>
+
+        <Link to='/mybids'>
+          <div
+            className={ `d-flex align-items-center text-center justify-content-start sidebardiv ${ activeTab === 'mybids' ? 'sidebarctivetab' : ''
+              }` }
+            onClick={ () => handleTabClick( 'mybids' ) }
+          >
+            <p className='mb-0'>My Bids</p>
+          </div>
+        </Link>
         <div
           className={ `d-flex align-items-center justify-content-start sidebardiv ${ activeTab === 'Approval' ? '' : ''
             }` }

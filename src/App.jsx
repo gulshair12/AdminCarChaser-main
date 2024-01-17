@@ -9,6 +9,7 @@ import Dealer from './App/Pages/Approval/Dealer/index.jsx';
 import Chat from './App/Pages/Chat/index.jsx';
 import Notification from './App/Pages/Notification/index.jsx';
 import DetailPage from './App/Pages/Notification/Components/DetailsPage/index.jsx';
+import MyBids from "./App/Pages/MyBids/Index.jsx"
 function App() {
   return (
     <>
@@ -21,6 +22,8 @@ function App() {
           <Route exact path='/Chat' element={<Chat />} />
           <Route exact path='/Notification' element={<Notification />} />
           <Route exact path='/DetailPage' element={<DetailPage />} />
+          <Route exact path='/mybids' element={<MyBids />} />
+
         </Routes>
       </BrowserRouter>
     </>
